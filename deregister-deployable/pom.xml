@@ -1,10 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.ibm</groupId>
-  <artifactId>deregister-deployable</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ibm</groupId>
+	<artifactId>deregister-deployable</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.11</version>
+		</dependency>
+	</dependencies>
+	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -24,10 +31,12 @@
 					<archive>
 						<manifest>
 							<!-- <addClasspath>true</addClasspath> <classpathPrefix>lib/</classpathPrefix> -->
-							<mainClass>com.ibm.entry.EntryPoint</mainClass>
+							<!-- <mainClass>com.ibm.entry.EntryPoint</mainClass> -->
+							<mainClass>com.ibm.registryEntry.RegistryEntry</mainClass>
 						</manifest>
 					</archive>
-					<finalName>supplierbatch</finalName>
+					<!-- <finalName>supplierbatch</finalName> -->
+					<finalName>recycleApp</finalName>
 				</configuration>
 			</plugin>
 		</plugins>
